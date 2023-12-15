@@ -1,0 +1,12 @@
+mpd_host=/run/user/1000/mpd/socket
+clock_display_seconds=yes
+display_volume_level=yes
+external_editor=nvim
+mpd_music_dir=/home/jack77793/Music
+use_console_editor=yes
+user_interface=alternative
+visualizer_data_source=/home/jack77793/.local/share/mpd/mpd.fifo
+visualizer_in_stereo=yes
+visualizer_look=+|
+visualizer_output_name=MPD FIFO
+visualizer_type=spectrum

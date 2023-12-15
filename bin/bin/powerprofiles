@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+performance="performance"
+balanced="balanced"
+powersaver="power-saver"
+selected_option=$(echo -e "$performance\n$balanced\n$powersaver" | wofi --dmenu -p `powerprofilesctl get`)
+if [ "$selected_option" == "$performance" ]
+then
+    powerprofilesctl set $performance
+elif [ "$selected_option" == "$balanced" ]
+then
+    powerprofilesctl set $balanced
+elif [ "$selected_option" == "$powersaver" ]
+then
+    powerprofilesctl set $powersaver
+else
+    echo "No match"
+fi
+

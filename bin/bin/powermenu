@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+lock="Lock"
+logout="Logout"
+shutdown="Shutdown"
+reboot="Reboot"
+suspend="Suspend"
+hibernate="Hibernate"
+selected_option=$(echo -e "$lock\n$logout\n$shutdown\n$reboot\n$suspend\n$hibernate" | wofi --dmenu)
+if [ "$selected_option" == "$lock" ]
+then
+    swaylock -i /home/Jack77793/.config/wallpaper/nord_triangle.png -f
+elif [ "$selected_option" == "$logout" ]
+then
+    loginctl terminate-user `whoami`
+elif [ "$selected_option" == "$shutdown" ]
+then
+    systemctl poweroff
+elif [ "$selected_option" == "$reboot" ]
+then
+    systemctl reboot
+elif [ "$selected_option" == "$suspend" ]
+then
+    systemctl suspend
+elif [ "$selected_option" == "$hibernate" ]
+then
+    systemctl hibernate
+else
+    echo "No match"
+fi
+

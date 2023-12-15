@@ -1,0 +1,149 @@
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term terminal
+set $menu wofi
+
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --class "termfloat"
+bindsym $mod+c reload
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+f fullscreen
+bindsym $mod+w exec powermenu
+bindsym $mod+p exec powerprofiles
+bindsym Ctrl+Space exec fcitx5-remote -t && notify-send "Input methot switched"
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
+bindgesture swipe:3:up fullscreen enable
+bindgesture swipe:3:down fullscreen disable
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
+bindsym $mod+bracketleft exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
+bindsym $mod+bracketright exec grim ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
+bindsym $mod+backslash exec slurp | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
+
+bindsym $mod+m exec cliphist list | wofi --dmenu --pre-display-cmd "echo -n '%s' | cut -z -f 2" | cliphist decode | wl-copy
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bar {
+    swaybar_command waybar
+}
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+#output * bg /home/Jack77793/.config/wallpaper/$(ls /home/Jack77793/.config/wallpaper | shuf -n 1) fill
+output * bg /home/Jack77793/.config/wallpaper/nixos.png fill
+
+xwayland enabled
+
+gaps inner 8
+gaps outer 8
+
+default_border pixel 3
+default_floating_border pixel 3
+
+client.focused #5e81ac #5e81ac #e5e9f0
+client.focused_inactive #88c0d0 #88c0d0 #3b4252
+client.unfocused #88c0d0 #88c0d0 #3b4252
+client.placeholder #88c0d0 #88c0d0 #3b4252
+client.urgent #bf616a #bf616a #e5e9f0
+
+exec --no-startup-id dbus-update-activation-environment --all
+exec gnome-keyring-daemon --start --components=secrets
+exec fcitx5 -d --replace
+exec mako
+exec wl-paste --watch cliphist store
+exec autotiling
+exec swayidle -w \
+    timeout 720 'systemctl suspend' \
+    before-sleep 'swaylock -i /home/Jack77793/.config/wallpaper/nixos.png -f'
+
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [window_role = "task_dialog"] floating enable
+for_window [window_type = "menu"] floating enable
+for_window [title = "共享文件"] floating enable
+for_window [app_id = "floating"] floating enable
+for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [app_id = "termfloat"] floating enable, resize set width 1280px height 800px
+for_window [app_id = "imv"] floating enable, resize set width 1280px height 800px, border pixel 3
+for_window [app_id = "mpv"] floating enable, resize set width 1280px height 800px
+for_window [app_id = "Waydroid"] floating enable, resize set width 1882px height 1000px, border pixel 3
+for_window [app_id = "io.poly000.waylyrics"] floating enable, border none, sticky enable
+for_window [class = "wemeetapp"] floating enable
+for_window [class = ".scrcpy*"] floating enable
+for_window [app_id = ".bulky*"] floating enable, border pixel 3
+for_window [class = "explorer.exe"] floating enable
+for_window [class = "(?i)pinentry"] floating enable
+for_window [title = "Administrator privileges required"] floating enable
+for_window [title = "About Mozilla Firefox"] floating enable
+for_window [window_role = "About"] floating enable
+for_window [class = "org.jackhuang.hmcl.Launcher"] border none
+for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border pixel 3
+for_window [app_id = "firefox" title="画中画"] floating enable, sticky enable, border pixel 3
+
+no_focus [app_id = "io.poly000.waylyrics"]
+

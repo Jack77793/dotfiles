@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+sessions=$(tmux list-sessions)
+if ! tmux list-sessions; then
+    alacritty "$@" -e tmux
+else
+    selected=$(echo -e "New Session\n`tmux list-sessions`" | wofi --dmenu)
+    if [ "$selected" == "New Session" ]; then
+        alacritty "$@" -e tmux
+    elif [ -n "$selected" ]; then
+        alacritty "$@" -e tmux attach -t ${selected:0:1}
+    else
+        echo "No match"
+    fi
+fi
+
