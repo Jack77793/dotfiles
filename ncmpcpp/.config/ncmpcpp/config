@@ -1,4 +1,5 @@
-mpd_host=/run/user/1000/mpd/socket
+mpd_host=127.0.0.1
+mpd_port=6600
 clock_display_seconds=yes
 display_volume_level=yes
 external_editor=nvim
