@@ -1,3 +1,0 @@
-[submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
-	url = git@gitlab.com:Jack77793/nvim.git

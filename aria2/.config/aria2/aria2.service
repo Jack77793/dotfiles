@@ -1,0 +1,10 @@
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=aria2c
+Restart=on-failure
+
+[Unit]
+After=network.target
+Description=aria2
