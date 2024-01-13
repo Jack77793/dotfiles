@@ -6,6 +6,7 @@ export PROMPT="$NEWLINE%B%F{magenta}#%b%f %B%F{blue}%n%b%f @ %B%F{green}%m%b%f i
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1048576
 export SAVEHIST=$HISTSIZE
+export BAT_THEME="Nord"
 
 bindkey -e
 
