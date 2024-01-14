@@ -60,6 +60,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey "" forward-word
 
+alias open="xdg-open"
 alias ls="eza"
 alias ll="eza -lb"
 alias la="eza -lab"
