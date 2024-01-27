@@ -2,7 +2,7 @@ setopt nonomatch
 setopt completealiases
 
 export NEWLINE=$'\n'
-export PROMPT="$NEWLINE%B%F{magenta}#%b%f %B%F{blue}%n%b%f @ %B%F{green}%m%b%f in %B%F{yellow}%~%b%f [%*] C:%B%F{red}%?%b%f$NEWLINE%B%F{red}%#%b%f "
+export PROMPT="$NEWLINE%B%F{magenta}#%b%f %B%F{blue}%n%b%f @ %B%F{green}%m%b%f in %B%F{yellow}%~%b%f [%*] %B%F{red}%(?..%?)%b%f$NEWLINE%B%F{red}%#%b%f "
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1048576
 export SAVEHIST=$HISTSIZE
