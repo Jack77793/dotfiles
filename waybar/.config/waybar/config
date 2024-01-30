@@ -1,5 +1,5 @@
 {
-    "position": "top",
+    "position": "bottom",
     "modules-center": [
         "clock"
     ],
@@ -20,12 +20,12 @@
         "custom/powermenu"
     ],
     "custom/powermenu": {
-        "format": " ",
-        "on-click": "pkill wofi || powermenu",
+        "format": "  ",
+        "on-click": "pkill wofi || $HOME/bin/powermenu",
         "tooltip": false
     },
     "memory": {
-        "format": " {percentage}%",
+        "format": "MEM: {percentage}%",
         "interval": 1,
         "on-click-right": "alacritty --class=\"termfloat\" -e btop",
         "states": {
@@ -53,7 +53,7 @@
             "critical": 15,
             "warning": 30
         },
-        "on-click-right": "pkill wofi || powerprofiles",
+        "on-click-right": "pkill wofi || $HOME/bin/powerprofiles",
         "tooltip": false
     },
     "clock": {
@@ -63,7 +63,7 @@
         "tooltip-format": "<tt>{calendar}</tt>"
     },
     "cpu": {
-        "format": "󰻠 {usage}%",
+        "format": "CPU: {usage}%",
         "on-click-right": "alacritty --class=\"termfloat\" -e btop",
         "interval": 1,
         "states": {
@@ -76,7 +76,7 @@
         "on-click-right": "alacritty --class=\"termfloat\" -e cava"
     },
     "custom/launcher": {
-        "format": " ",
+        "format": "  ",
         "on-click": "pkill wofi || wofi",
         "tooltip": false
     },
@@ -94,25 +94,18 @@
         "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
     },
     "network": {
-        "format-disconnected": "󰯡 Disconnected",
-        "format-ethernet": "󰀂 {ifname} ({ipaddr})",
-        "format-linked": "󰖪 {essid} (No IP)",
-        "format-wifi": "󰖩 {essid}",
+        "format-disconnected": "NET: Disconnected",
+        "format-ethernet": "NET: {ifname} ({ipaddr})",
+        "format-linked": "NET: {essid} (No IP)",
+        "format-wifi": "NET: {essid}",
         "interval": 1,
         "tooltip-format": "{ifname}/{ipaddr}",
         "on-click-right": "alacritty --class \"termfloat\" -e nmtui",
     },
     "wireplumber": {
-        "format": "{icon} {volume}%",
-        "format-icons": {
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "format-muted": "󰖁 Muted",
-        "on-click-right": "pwvucontrol",
+        "format": "VOL: {volume}%",
+        "format-muted": "VOL: Muted",
+        "on-click-right": "helvum",
         "scroll-step": 5,
         "tooltip": false
     },
