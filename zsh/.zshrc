@@ -8,6 +8,7 @@ export HISTSIZE=1048576
 export SAVEHIST=$HISTSIZE
 export EDITOR="nvim"
 export BAT_THEME="Nord"
+export PATH=$HOME/bin:$PATH
 
 bindkey -e
 
