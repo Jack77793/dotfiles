@@ -21,6 +21,7 @@
 }
 window#waybar {
     background-color: transparent;
+    opacity: 0.96;
 }
 window > box {
     margin-left: 5px;
@@ -58,9 +59,9 @@ tooltip label {
     color: #d8dee9;
 }
 #custom-launcher {
-    font-size: 25px;
-    padding-left: 0px;
-    padding-right: 0px;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 16px;
     color: #b48ead;
 }
 #mode, #clock, #memory, #cpu, #mpd, #backlight, #wireplumber, #battery, #custom-powermenu, #custom-cava-internal {
@@ -97,10 +98,17 @@ tooltip label {
     color: #d8dee9;
 }
 #custom-powermenu {
-    font-size: 25px;
-    padding-left: 0px;
-    padding-right: 0px;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 16px;
     color: #bf616a;
+}
+#idle_inhibitor {
+    font-size: 16px;
+    padding-right: 8px;
+}
+#idle_inhibitor.activated {
+    color: #a3be8c;
 }
 #tray {
     padding-right: 10px;

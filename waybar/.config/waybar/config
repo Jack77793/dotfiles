@@ -1,6 +1,7 @@
 {
     "position": "bottom",
     "modules-center": [
+        "idle_inhibitor",
         "clock"
     ],
     "modules-left": [
@@ -19,8 +20,15 @@
         "battery",
         "custom/powermenu"
     ],
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰈈",
+            "deactivated": "󰈉"
+        }
+    },
     "custom/powermenu": {
-        "format": "  ",
+        "format": "",
         "on-click": "pkill wofi || $HOME/bin/powermenu",
         "tooltip": false
     },
@@ -76,7 +84,7 @@
         "on-click-right": "alacritty --class=\"termfloat\" -e cava"
     },
     "custom/launcher": {
-        "format": "  ",
+        "format": "",
         "on-click": "pkill wofi || wofi",
         "tooltip": false
     },
