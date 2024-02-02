@@ -35,6 +35,7 @@ bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
@@ -45,6 +46,7 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
 bindgesture swipe:3:right workspace prev
 bindgesture swipe:3:left workspace next
@@ -93,7 +95,10 @@ input type:touchpad {
 }
 
 #output * bg /home/Jack77793/.config/wallpaper/$(ls /home/Jack77793/.config/wallpaper | shuf -n 1) fill
-output * bg /home/Jack77793/Pictures/wallpaper/rei.png fill
+output * {
+    adaptive_sync on
+    bg /home/Jack77793/Pictures/wallpaper/rei.png fill
+}
 
 xwayland enabled
 
@@ -110,6 +115,7 @@ client.placeholder #88c0d0 #88c0d0 #3b4252
 client.urgent #bf616a #bf616a #e5e9f0
 
 exec --no-startup-id dbus-update-activation-environment --all
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon --start --components=secrets
 exec fcitx5 -d --replace
 exec mako
@@ -149,9 +155,10 @@ for_window [title = "Administrator privileges required"] floating enable
 for_window [title = "About Mozilla Firefox"] floating enable
 for_window [window_role = "About"] floating enable
 for_window [class = "org.jackhuang.hmcl.Launcher"] border none
+for_window [class = "org.jackhuang.hmcl.Launcher" title = "游戏意外退出"] border pixel 3
 for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border pixel 3
 for_window [app_id = "firefox" title="画中画"] floating enable, sticky enable, border pixel 3
-
-no_focus [app_id = "io.poly000.waylyrics"]
+for_window [app_id = "thunar" title="Rename*"] floating enable
+for_window [class = "scrcpy"] floating enable
 
 include /etc/sway/config.d/*
