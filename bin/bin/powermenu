@@ -8,7 +8,7 @@ hibernate="Hibernate"
 selected_option=$(echo -e "$lock\n$logout\n$shutdown\n$reboot\n$suspend\n$hibernate" | wofi --dmenu)
 if [ "$selected_option" == "$lock" ]
 then
-    swaylock -i /home/Jack77793/.config/wallpaper/nord_triangle.png -f
+    swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f
 elif [ "$selected_option" == "$logout" ]
 then
     loginctl terminate-user `whoami`
