@@ -121,7 +121,6 @@ exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
 exec $HOME/bin/autotiling
-exec clash-nyanpasu
 exec blueman-applet
 exec swayidle -w \
     timeout 720 'systemctl suspend' \
