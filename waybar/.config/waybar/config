@@ -42,20 +42,12 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": [
-            "󰃝", "󰃞", "󰃟", "󰃠"
-        ],
+        "format": "LIT: {percent}%",
         "on-scroll-down": "light -U 5",
         "on-scroll-up": "light -A 5"
     },
     "battery": {
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-icons": [
-            "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-        ],
+        "format": "BAT: {capacity}%",
         "interval": 10,
         "states": {
             "critical": 15,
