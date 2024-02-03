@@ -13,7 +13,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+f fullscreen
 bindsym $mod+w exec $HOME/bin/powermenu
-#bindsym $mod+p exec $HOME/bin/powerprofiles
+bindsym $mod+p exec $HOME/bin/powerprofiles
 bindsym Ctrl+Space exec fcitx5-remote -t && notify-send "Input methot switched"
 
 bindsym $mod+$left focus left
