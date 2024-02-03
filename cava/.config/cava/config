@@ -53,6 +53,8 @@
 ; method = fifo
 ; source = /tmp/mpd.fifo
 
+method = pulse
+
 [output]
 
 # Ouput method. Can be 'ncurses', 'noncurses' or 'raw'. 
