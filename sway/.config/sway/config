@@ -156,7 +156,8 @@ for_window [window_role = "About"] floating enable
 for_window [class = "org.jackhuang.hmcl.Launcher"] border none
 for_window [class = "org.jackhuang.hmcl.Launcher" title = "游戏意外退出"] border pixel 3
 for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border pixel 3
-for_window [app_id = "firefox" title="画中画"] floating enable, sticky enable, border pixel 3
+for_window [title="画中画"] floating enable, sticky enable, border pixel 3
+for_window [title="Picture in picture"] floating enable, sticky enable, border pixel 3
 for_window [app_id = "thunar" title="Rename*"] floating enable
 for_window [class = "scrcpy"] floating enable
 
