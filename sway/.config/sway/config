@@ -59,6 +59,16 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
+bindsym $mod+F1 exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym $mod+F2 exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym $mod+F3 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym $mod+F4 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym $mod+F5 exec light -U 5
+bindsym $mod+F6 exec light -A 5
+bindsym F9 exec playerctl play-pause
+bindsym F10 exec playerctl previous
+bindsym F11 exec playerctl next
+
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
