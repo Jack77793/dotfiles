@@ -115,8 +115,8 @@ xwayland enabled
 gaps inner 8
 gaps outer 8
 
-default_border pixel 3
-default_floating_border pixel 3
+default_border normal 3
+default_floating_border normal 3
 
 client.focused #5e81ac #5e81ac #e5e9f0
 client.focused_inactive #88c0d0 #88c0d0 #3b4252
@@ -152,23 +152,23 @@ for_window [title = "共享文件"] floating enable
 for_window [app_id = "floating"] floating enable
 for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
 for_window [app_id = "termfloat"] floating enable, resize set width 1280px height 800px
-for_window [app_id = "imv"] floating enable, resize set width 1280px height 800px, border pixel 3
+for_window [app_id = "imv"] floating enable, resize set width 1280px height 800px, border normal 3
 for_window [app_id = "mpv"] floating enable, resize set width 1280px height 800px
-for_window [app_id = "Waydroid"] floating enable, resize set width 1882px height 1000px, border pixel 3
+for_window [app_id = "Waydroid"] floating enable, resize set width 1882px height 1000px, border normal 3
 for_window [app_id = "io.poly000.waylyrics"] floating enable, border none, sticky enable
 for_window [class = "wemeetapp"] floating enable
 for_window [class = ".scrcpy*"] floating enable
-for_window [app_id = ".bulky*"] floating enable, border pixel 3
+for_window [app_id = ".bulky*"] floating enable, border normal 3
 for_window [class = "explorer.exe"] floating enable
 for_window [class = "(?i)pinentry"] floating enable
 for_window [title = "Administrator privileges required"] floating enable
 for_window [title = "About Mozilla Firefox"] floating enable
 for_window [window_role = "About"] floating enable
 for_window [class = "org.jackhuang.hmcl.Launcher"] border none
-for_window [class = "org.jackhuang.hmcl.Launcher" title = "游戏意外退出"] border pixel 3
-for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border pixel 3
-for_window [title="画中画"] floating enable, sticky enable, border pixel 3
-for_window [title="Picture in picture"] floating enable, sticky enable, border pixel 3
+for_window [class = "org.jackhuang.hmcl.Launcher" title = "游戏意外退出"] border normal 3
+for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border normal 3
+for_window [title="画中画"] floating enable, sticky enable, border normal 3
+for_window [title="Picture in picture"] floating enable, sticky enable, border normal 3
 for_window [app_id = "thunar" title="Rename*"] floating enable
 for_window [class = "scrcpy"] floating enable
 
