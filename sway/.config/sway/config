@@ -77,6 +77,7 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 bindsym $mod+bracketleft exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+bracketright exec grim ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+backslash exec slurp | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
