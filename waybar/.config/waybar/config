@@ -95,7 +95,7 @@
     },
     "network": {
         "format-disconnected": "NET: Disconnected",
-        "format-ethernet": "NET: {ifname} ({ipaddr})",
+        "format-ethernet": "NET: Wired",
         "format-linked": "NET: {essid} (No IP)",
         "format-wifi": "NET: {essid}",
         "interval": 1,
