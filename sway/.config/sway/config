@@ -14,6 +14,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+f fullscreen
 bindsym $mod+w exec $HOME/bin/powermenu
 bindsym $mod+p exec $HOME/bin/powerprofiles
+bindsym $mod+m exec cliphist list | wofi --dmenu --pre-display-cmd "echo -n '%s' | cut -z -f 2" | cliphist decode | wl-copy
 bindsym Ctrl+Space exec fcitx5-remote -t && notify-send "Input methot switched"
 
 bindsym $mod+$left focus left
@@ -59,16 +60,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-bindsym $mod+F1 exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym $mod+F2 exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-bindsym $mod+F3 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym $mod+F4 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-bindsym $mod+F5 exec light -U 5
-bindsym $mod+F6 exec light -A 5
-bindsym F9 exec playerctl play-pause
-bindsym F10 exec playerctl previous
-bindsym F11 exec playerctl next
-
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
@@ -78,13 +69,13 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
 bindsym $mod+bracketleft exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+bracketright exec grim ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
 bindsym $mod+backslash exec slurp | grim -g - ~/Pictures/Screenshots/Screenshot_$(date "+%Y-%m-%d_%H-%M-%S").png
 
-bindsym $mod+m exec cliphist list | wofi --dmenu --pre-display-cmd "echo -n '%s' | cut -z -f 2" | cliphist decode | wl-copy
-
 bindsym $mod+r mode "resize"
+
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -132,14 +123,12 @@ exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
 exec $HOME/bin/autotiling
-exec swayidle -w \
-    timeout 720 'systemctl suspend' \
-    before-sleep 'swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f'
+exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
 
 exec /usr/libexec/xdg-desktop-portal-gtk -r
 exec /usr/libexec/xdg-desktop-portal-wlr -r
 exec /usr/libexec/flatpak-portal -r
-exec "sh -c 'sleep 5;exec /usr/libexec/xdg-desktop-portal -r'"
+exec "sh -c 'sleep 5; exec /usr/libexec/xdg-desktop-portal -r'"
 
 exec $HOME/bin/autostart
 
@@ -149,28 +138,20 @@ for_window [window_role = "dialog"] floating enable
 for_window [window_type = "dialog"] floating enable
 for_window [window_role = "task_dialog"] floating enable
 for_window [window_type = "menu"] floating enable
-for_window [title = "共享文件"] floating enable
+for_window [window_role = "About"] floating enable
+for_window [title="Picture in picture"] floating enable, sticky enable, border pixel 3
+for_window [title="画中画"] floating enable, sticky enable, border pixel 3
+for_window [title = "Administrator privileges required"] floating enable
+for_window [class = "(?i)pinentry"] floating enable
 for_window [app_id = "floating"] floating enable
-for_window [app_id = "floating_update"] floating enable, resize set width 1000px height 600px
+for_window [app_id = "floating_update"] floating enable, resize set width 1280height 800px
 for_window [app_id = "termfloat"] floating enable, resize set width 1280px height 800px
+
 for_window [app_id = "imv"] floating enable, resize set width 1280px height 800px, border normal 3
 for_window [app_id = "mpv"] floating enable, resize set width 1280px height 800px
 for_window [app_id = "Waydroid"] floating enable, resize set width 1882px height 1000px, border pixel 3
-for_window [app_id = "io.poly000.waylyrics"] floating enable, border none, sticky enable
 for_window [class = "wemeetapp"] floating enable
-for_window [class = ".scrcpy*"] floating enable
-for_window [app_id = ".bulky*"] floating enable, border normal 3
 for_window [class = "explorer.exe"] floating enable
-for_window [class = "(?i)pinentry"] floating enable
-for_window [title = "Administrator privileges required"] floating enable
-for_window [title = "About Mozilla Firefox"] floating enable
-for_window [window_role = "About"] floating enable
-for_window [class = "org.jackhuang.hmcl.Launcher"] border none
-for_window [class = "org.jackhuang.hmcl.Launcher" title = "游戏意外退出"] border normal 3
-for_window [app_id = "firefox" title="Library"] floating enable, sticky enable, border normal 3
-for_window [title="画中画"] floating enable, sticky enable, border normal 3
-for_window [title="Picture in picture"] floating enable, sticky enable, border normal 3
-for_window [app_id = "thunar" title="Rename*"] floating enable
 for_window [class = "scrcpy"] floating enable
-
-include /etc/sway/config.d/*
+for_window [class = "org.jackhuang.hmcl.Launcher"] border none
+for_window [app_id = "thunar" title="Rename*"] floating enable
