@@ -106,6 +106,7 @@ tooltip label {
 #idle_inhibitor {
     font-size: 16px;
     padding-right: 8px;
+    padding-left: 10px;
 }
 #idle_inhibitor.activated {
     color: #a3be8c;

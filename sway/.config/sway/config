@@ -99,7 +99,7 @@ input type:touchpad {
 #output * bg /home/Jack77793/.config/wallpaper/$(ls /home/Jack77793/.config/wallpaper | shuf -n 1) fill
 output * {
     adaptive_sync on
-    bg /home/Jack77793/Pictures/wallpaper/rei.png fill
+    bg /home/Jack77793/Pictures/wallpaper/amagi.jpg fill
 }
 
 xwayland enabled

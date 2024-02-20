@@ -1,5 +1,5 @@
 {
-    "position": "bottom",
+    "position": "top",
     "modules-center": [
         "idle_inhibitor",
         "clock"
