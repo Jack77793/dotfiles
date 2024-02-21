@@ -123,7 +123,7 @@ exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
 exec $HOME/bin/autotiling
-exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
+exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/amagi.jpg -f"
 
 exec /usr/libexec/xdg-desktop-portal-gtk -r
 exec /usr/libexec/xdg-desktop-portal-wlr -r
