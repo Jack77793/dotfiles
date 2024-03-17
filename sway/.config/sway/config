@@ -122,6 +122,7 @@ exec gnome-keyring-daemon --start --components=secrets
 exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
+exec kdeconnect-indicator
 exec $HOME/bin/autotiling
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/amagi.jpg -f"
 
