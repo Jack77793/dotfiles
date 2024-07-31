@@ -66,3 +66,5 @@ alias ls="eza"
 alias ll="eza -lb"
 alias la="eza -lab"
 alias tree="eza -Ta"
+
+alias tupdate="apt-get update && apt-get --no-install-recommends --no-cache upgrade && apt-get autoremove"
