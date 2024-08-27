@@ -68,3 +68,4 @@ alias la="eza -lab"
 alias tree="eza -Ta"
 
 alias tupdate="apt-get update && apt-get --no-install-recommends --no-install-suggests upgrade && apt-get autoremove && rm -rf $PREFIX/var/lib/apt/lists/*"
+alias acc="su -c /system/bin/acc"
