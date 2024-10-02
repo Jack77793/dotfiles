@@ -114,7 +114,7 @@
         "tooltip": false
     },
     "custom/powermenu": {
-        "format": "󰐥",
+        "format": "⏻",
         "on-click": "pkill wofi || $HOME/bin/powermenu",
         "tooltip": false
     },
