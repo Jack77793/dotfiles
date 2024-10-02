@@ -1,14 +1,13 @@
 {
-    "position": "top",
-    "modules-center": [
-        "idle_inhibitor",
-        "clock"
-    ],
     "modules-left": [
         "custom/launcher",
         "sway/workspaces",
         "mpd",
         "custom/cava-internal"
+    ],
+    "modules-center": [
+        "idle_inhibitor",
+        "clock"
     ],
     "modules-right": [
         "tray",
@@ -20,40 +19,54 @@
         "battery",
         "custom/powermenu"
     ],
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "pkill wofi || wofi",
+        "tooltip": false
+    },
+    "custom/cava-internal": {
+        "exec": "sleep 1s && cava -p ~/.config/cava/internal | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'",
+        "tooltip": false,
+        "on-click-right": "alacritty --class=\"termfloat\" -e cava"
+    },
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "󰈈",
             "deactivated": "󰈉"
-        }
-    },
-    "custom/powermenu": {
-        "format": "",
-        "on-click": "pkill wofi || $HOME/bin/powermenu",
+        },
         "tooltip": false
-    },
-    "memory": {
-        "format": "MEM: {percentage}%",
-        "interval": 1,
-        "on-click-right": "alacritty --class=\"termfloat\" -e btop",
-        "states": {
-            "warning": 85
-        }
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "LIT: {percent}%",
+        "on-scroll-up": "light -A 5",
         "on-scroll-down": "light -U 5",
-        "on-scroll-up": "light -A 5"
+        "format": "{icon} {percent}%",
+        "format-icons": ["󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"]
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click-right": "helvum",
+        "scroll-step": 5,
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip": false
     },
     "battery": {
-        "format": "BAT: {capacity}%",
         "interval": 10,
         "states": {
-            "critical": 15,
-            "warning": 30
+            "warning": 30,
+            "critical": 15
         },
-        "on-click-right": "pkill wofi || $HOME/bin/powerprofiles",
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+        "format-full": "󰁹 {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
         "tooltip": false
     },
     "clock": {
@@ -62,58 +75,51 @@
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>"
     },
-    "cpu": {
-        "format": "CPU: {usage}%",
-        "on-click-right": "alacritty --class=\"termfloat\" -e btop",
+    "memory": {
         "interval": 1,
+        "format": "󰍛 {percentage}%",
+        "on-click-right": "alacritty --class=\"termfloat\" -e btop",
         "states": {
-            "warning": 90
+            "warning": 85
         }
     },
-    "custom/cava-internal": {
-        "exec": "sleep 1s && cava -p ~/.config/cava/internal | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'",
-        "tooltip": false,
-        "on-click-right": "alacritty --class=\"termfloat\" -e cava"
-    },
-    "custom/launcher": {
-        "format": "",
-        "on-click": "pkill wofi || wofi",
-        "tooltip": false
+    "cpu": {
+        "interval": 1,
+        "format": "󰻠 {usage}%",
+        "on-click-right": "alacritty --class=\"termfloat\" -e btop",
+        "states": {
+            "warning": 85
+        }
     },
     "mpd": {
+        "max-length": 25,
         "format": "{title}",
-        "format-disconnected": "",
         "format-paused": "{title}",
         "format-stopped": "",
-        "max-length": 25,
+        "format-disconnected": "",
         "on-click": "mpc --quiet toggle",
         "on-click-right": "alacritty --class=\"termfloat\" -e ncmpcpp",
-        "on-scroll-down": "mpc --quiet next",
         "on-scroll-up": "mpc --quiet prev",
-        "smooth-scrolling-threshold": 5,
+        "on-scroll-down": "mpc --quiet next",
+        "smooth-scrolling-threshold":5,
         "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
     },
     "network": {
-        "format-disconnected": "NET: Disconnected",
-        "format-ethernet": "NET: Wired",
-        "format-linked": "NET: {essid} (No IP)",
-        "format-wifi": "NET: {essid}",
         "interval": 1,
-        "tooltip-format": "{ifname}/{ipaddr}",
+        "format-wifi": "󰖩  {essid} ({ipaddr})",
+        "format-ethernet": "󰈀  {ifname} ({ipaddr})",
+        "format-linked": "󰈀  {essid} (No IP)",
+        "format-disconnected": "󰖪  Disconnected",
         "on-click-right": "alacritty --class \"termfloat\" -e nmtui",
+        "tooltip": false
     },
-    "wireplumber": {
-        "format": "VOL: {volume}%",
-        "format-muted": "VOL: Muted",
-        "on-click-right": "helvum",
-        "scroll-step": 5,
+    "custom/powermenu": {
+        "format": "󰐥",
+        "on-click": "pkill wofi || $HOME/bin/powermenu",
         "tooltip": false
     },
     "tray": {
         "icon-size": 16,
         "spacing": 16
-    },
-    "sway/workspaces": {
-        "disable-scroll": true
     }
 }

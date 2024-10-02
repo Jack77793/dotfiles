@@ -1,17 +1,19 @@
 * {
-    font-family: "monospace";
+    font-family: "SarasaTermSC Nerd Font";
     font-size: 12pt;
     font-weight: bold;
     border-radius: 0px;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
+
 @keyframes blink_red {
     to {
         background-color: #bf616a;
-        color: #d8dee9;
+        color: #2e3440;
     }
 }
+
 .warning, .critical, .urgent {
     animation-name: blink_red;
     animation-duration: 1s;
@@ -19,76 +21,123 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 window#waybar {
     background-color: transparent;
 }
+
 window > box {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    background-color: #3b4252;
 }
+
 #workspaces {
     padding-left: 0px;
-    padding-right: 5px;
+    padding-right: 4px;
 }
+
 #workspaces button {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    color: #3b4252;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #e5e9f0;
 }
+
 #workspaces button.focused {
-    background-color: #5e81ac;
-    color: #d8dee9;
+    background-color: #81a1c1;
+    color: #2e3440;
 }
+
 #workspaces button.urgent {
-    color: #bf616a;
+    color: #2e3440;
 }
+
 #workspaces button:hover {
-    background-color: #5e81ac;
-    color: #3b4252;
+    background-color: #e5e9f0;
+    color: #2e3440;
 }
+
 tooltip {
-    background: #d8dee9;
+    background-color: #2e3440;
 }
+
+tooltip label {
+    color: #e5e9f0;
+}
+
 #custom-launcher {
-    font-size: 16px;
     padding-left: 12px;
-    padding-right: 16px;
+    padding-right: 10px;
     color: #b48ead;
 }
-#mode, #clock, #memory, #cpu, #mpd, #backlight, #wireplumber, #battery, #custom-cava-internal, #tray {
+
+#mode, #clock, #memory, #cpu, #mpd, #idle_inhibitor, #backlight, #wireplumber, #network, #battery, #custom-cava-internal {
     padding-left: 10px;
     padding-right: 10px;
-    color: #3b4252;
 }
+
+#memory {
+    color: #8fbcbb;
+}
+
+#cpu {
+    color: #b48ead;
+}
+
+#clock {
+    color: #e5e9f0;
+}
+
+#idle_inhibitor {
+    color: #ebcb8b;
+}
+
+#backlight {
+    color: #d08770;
+}
+
+#wireplumber {
+    color: #ebcb8b;
+}
+
 #network {
-    padding-left: 10px;
-    padding-right: 5px;
-    color: #3b4252;
+    color: #e5e9f0;
 }
-#custom-powermenu {
-    font-size: 16px;
-    padding-left: 12px;
-    padding-right: 16px;
+
+#battery.charging, #battery.full, #battery.discharging {
+    color: #a3be8c;
+}
+
+#battery.critical:not(.charging) {
     color: #bf616a;
 }
-#idle_inhibitor {
-    font-size: 16px;
-    padding-right: 8px;
+
+#custom-powermenu {
+    color: #bf616a;
+    padding-right: 16px;
     padding-left: 10px;
-    color: #3b4252;
 }
-#idle_inhibitor.activated {
-    color: #5e81ac;
+
+#tray {
+    padding-right: 10px;
 }
-#tray menu {
-    background: #d8dee9;
-    color: #3b4252;
+
+#mpd.paused {
+    font-style: normal;
 }
-#mpd.playing {
+
+#mpd.stopped {
+    background: transparent;
+}
+
+#mpd {
+    color: #e5e9f0;
     font-style: italic;
-    color: #3b4252;
+}
+
+#custom-cava-internal {
+    color: #d8dee9;
 }
