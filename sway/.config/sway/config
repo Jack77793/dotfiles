@@ -124,6 +124,7 @@ exec mako
 exec wl-paste --watch cliphist store
 exec kdeconnect-indicator
 exec $HOME/bin/autotiling
+exec systemctl --user start sunshine.service
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
 
 exec /usr/libexec/xdg-desktop-portal-gtk -r
@@ -148,7 +149,7 @@ for_window [app_id = "termfloat"] floating enable, resize set width 1280px heigh
 
 for_window [app_id = "imv"] floating enable, resize set width 1280px height 800px, border normal 3
 for_window [app_id = "mpv"] floating enable, resize set width 1280px height 800px
-for_window [app_id = "Waydroid"] floating enable, resize set width 1885px height 981px, border pixel 3
+for_window [app_id = "Waydroid"] floating enable, resize set width 1902px height 1020px, border pixel 3
 for_window [class = "wemeetapp"] floating enable
 for_window [class = "explorer.exe"] floating enable
 for_window [class = "scrcpy"] floating enable
