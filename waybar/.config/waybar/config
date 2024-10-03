@@ -11,6 +11,7 @@
     ],
     "modules-right": [
         "tray",
+        "bluetooth",
         "wireplumber",
         "backlight",
         "memory",
@@ -47,6 +48,13 @@
         "format": "{icon} {percent}%",
         "format-icons": ["󱩎","󱩏","󱩐","󱩑","󱩒","󱩓","󱩔","󱩕","󱩖","󰛨"]
     },
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-connected": "󰂯 {device_alias}",
+        "format-connected-battery": "󰂯 {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "on-click-right": "blueman-manager"
+    },
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "󰝟 Muted",
@@ -77,7 +85,7 @@
     },
     "memory": {
         "interval": 1,
-        "format": "󰍛 {percentage}%",
+        "format": "󰄫 {percentage}%",
         "on-click-right": "alacritty --class=\"termfloat\" -e btop",
         "states": {
             "warning": 85
@@ -85,7 +93,7 @@
     },
     "cpu": {
         "interval": 1,
-        "format": "󰻠 {usage}%",
+        "format": "󰍛 {usage}%",
         "on-click-right": "alacritty --class=\"termfloat\" -e btop",
         "states": {
             "warning": 85

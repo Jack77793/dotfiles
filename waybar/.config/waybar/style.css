@@ -74,9 +74,13 @@ tooltip label {
     color: #b48ead;
 }
 
-#mode, #clock, #memory, #cpu, #mpd, #idle_inhibitor, #backlight, #wireplumber, #network, #battery, #custom-cava-internal {
+#mode, #clock, #bluetooth, #memory, #cpu, #mpd, #idle_inhibitor, #backlight, #wireplumber, #network, #battery, #custom-cava-internal {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#bluetooth {
+    color: #81a1c1
 }
 
 #memory {
