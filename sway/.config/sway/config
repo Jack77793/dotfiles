@@ -122,9 +122,8 @@ exec gnome-keyring-daemon --start --components=secrets
 exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
-exec kdeconnect-indicator
+exec kdeconnectd
 exec $HOME/bin/autotiling
-exec systemctl --user start sunshine.service
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
 
 exec /usr/libexec/xdg-desktop-portal-gtk -r
