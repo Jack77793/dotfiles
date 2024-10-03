@@ -124,7 +124,6 @@ exec mako
 exec wl-paste --watch cliphist store
 exec kdeconnect-indicator
 exec $HOME/bin/autotiling
-exec blueman-applet
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
 
 exec /usr/libexec/xdg-desktop-portal-gtk -r
