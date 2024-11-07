@@ -120,7 +120,6 @@
         "format-ethernet": "󰈀  {ifname} ({ipaddr})",
         "format-linked": "󰈀  {essid} (No IP)",
         "format-disconnected": "󰖪  Disconnected",
-        "on-click-right": "alacritty --class \"termfloat\" -e nmtui",
         "tooltip": false
     },
     "custom/powermenu": {
