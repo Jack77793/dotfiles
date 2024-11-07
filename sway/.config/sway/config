@@ -3,7 +3,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term $HOME/bin/terminal
+set $term alacritty
 set $menu wofi
 
 bindsym $mod+Return exec $term
@@ -123,6 +123,7 @@ exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
 exec kdeconnectd
+exec thunar --daemon
 exec $HOME/bin/autotiling
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
 
