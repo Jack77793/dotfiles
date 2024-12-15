@@ -7,7 +7,7 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1048576
 export SAVEHIST=$HISTSIZE
 export EDITOR="nvim"
-export BAT_THEME="Nord"
+export BAT_THEME="base16-256"
 export PATH=$HOME/bin:$PATH
 
 bindkey -e
@@ -66,5 +66,4 @@ alias ls="eza"
 alias ll="eza -lb"
 alias la="eza -lab"
 alias tree="eza -Ta"
-alias duf="duf -style ascii"
-alias bat="bat -pP"
+alias cat="bat"
