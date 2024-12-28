@@ -7,7 +7,7 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1048576
 export SAVEHIST=$HISTSIZE
 export EDITOR="nvim"
-export BAT_THEME="base16-256"
+export BAT_THEME="Nord"
 export PATH=$HOME/bin:$PATH
 
 bindkey -e
