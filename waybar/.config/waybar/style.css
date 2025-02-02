@@ -69,14 +69,14 @@ tooltip label {
 }
 
 #custom-launcher {
-    padding-left: 12px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 8px;
     color: #b48ead;
 }
 
-#mode, #clock, #bluetooth, #memory, #cpu, #mpd, #idle_inhibitor, #backlight, #wireplumber, #network, #battery, #custom-cava-internal {
-    padding-left: 10px;
-    padding-right: 10px;
+#mode, #clock, #bluetooth, #memory, #cpu, #mpd, #backlight, #wireplumber, #network, #battery, #custom-cava-internal {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #bluetooth {
@@ -97,6 +97,7 @@ tooltip label {
 
 #idle_inhibitor {
     color: #ebcb8b;
+    padding-right: 5px;
 }
 
 #backlight {
@@ -121,8 +122,8 @@ tooltip label {
 
 #custom-powermenu {
     color: #bf616a;
-    padding-right: 18px;
-    padding-left: 10px;
+    padding-right: 15px;
+    padding-left: 8px;
 }
 
 #tray {
