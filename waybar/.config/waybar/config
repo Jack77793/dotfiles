@@ -43,8 +43,8 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5",
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
         "format": "LIT: {percent}%",
     },
     "bluetooth": {
@@ -113,7 +113,7 @@
         "format-ethernet": "NET: Wired",
         "format-linked": "NET: {essid} (No IP)",
         "format-disconnected": "NET: Disconnected",
-        "tooltip": false
+        "tooltip-format": "{ifname}\t{ipaddr}",
     },
     "custom/powermenu": {
         "format": "■",
