@@ -60,19 +60,19 @@ text = "#2e3440"
 size = 15
 
 [font.bold]
-family = "SarasaTermSC Nerd Font"
+family = "Sarasa Term SC"
 style = "Bold"
 
 [font.bold_italic]
-family = "SarasaTermSC Nerd Font"
+family = "Sarasa Term SC"
 style = "Bold Italic"
 
 [font.italic]
-family = "SarasaTermSC Nerd Font"
+family = "Sarasa Term SC"
 style = "Italic"
 
 [font.normal]
-family = "SarasaTermSC Nerd Font"
+family = "Sarasa Term SC"
 style = "Regular"
 
 [terminal.shell]
