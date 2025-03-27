@@ -1,5 +1,13 @@
 setopt nonomatch
 setopt completealiases
+setopt rm_star_silent
+setopt autocd
+setopt interactive_comments
+setopt listpacked
+setopt magic_equal_subst
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
 
 export NEWLINE=$'\n'
 export PROMPT="$NEWLINE%B%F{magenta}#%b%f %B%F{blue}%n%b%f @ %B%F{green}%m%b%f in %B%F{yellow}%~%b%f [%*] %B%F{red}%(?..%?)%b%f$NEWLINE%B%F{red}%#%b%f "
@@ -61,9 +69,21 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey "" forward-word
 
+alias :q="exit"
 alias open="xdg-open"
 alias ls="eza"
 alias ll="eza -lb"
 alias la="eza -lab"
 alias tree="eza -Ta"
 alias cat="bat"
+
+try_until_success () {
+  local i=1
+  while true; do
+    echo "Try $i at $(date)."
+    $* && break
+    (( i+=1 ))
+    echo
+  done
+}
+compdef try_until_success=command
