@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+export t=20 lctrl=29 v=47 enter=28
+export prompt="Chinese Input"
+
+function imswitch () {
+    if [[ "$INPUT_METHOD" == "ibus" ]]; then
+        if [[ "$1" == "zh" ]]; then
+            ibus engine rime
+        elif [[ "$1" == "en" ]]; then
+            ibus engine xkb:us::eng
+        fi
+    elif [[ "$INPUT_METHOD" == "fcitx" ]]; then
+        if [[ "$1" == "zh" ]]; then
+            fcitx5-remote -o
+        elif [[ "$1" == "en" ]]; then
+            fcitx5-remote -c
+        fi
+    else
+        return
+    fi   
+}
+
+ydotool key "$t":1 "$t":0
+imswitch zh
+zenity --title "$prompt" --text "$prompt:" --width 512 --entry | wl-copy --trim-newline
+imswitch en
+sleep 0.05
+ydotool key "$lctrl":1 "$v":1 "$v":0 "$lctrl":0
+ydotool key "$enter":1 "$enter":0
+wl-copy --clear
