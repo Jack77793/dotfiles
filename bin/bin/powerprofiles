@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
-performance="performance"
-balanced="balanced"
-powersaver="power-saver"
-selected_option=$(echo -e "$performance\n$balanced\n$powersaver" | wofi --dmenu -p `powerprofilesctl get`)
+performance="throughput-performance"
+balanced="balanced-battery"
+powersaver="powersave"
+selected_option=$(echo -e "$performance\n$balanced\n$powersaver" | wofi --dmenu -p "`tuned-adm active`")
 if [ "$selected_option" == "$performance" ]
 then
-    powerprofilesctl set $performance
+    tuned-adm profile $performance
 elif [ "$selected_option" == "$balanced" ]
 then
-    powerprofilesctl set $balanced
+    tuned-adm profile $balanced
 elif [ "$selected_option" == "$powersaver" ]
 then
-    powerprofilesctl set $powersaver
+    tuned-adm profile $powersaver
 else
     echo "No match"
 fi
