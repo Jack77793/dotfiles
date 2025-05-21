@@ -114,6 +114,7 @@
         "format-linked": "NET: {essid} (No IP)",
         "format-disconnected": "NET: Disconnected",
         "tooltip-format": "{ifname}\t{ipaddr}",
+        "on-click-right": "alacritty --class=\"termfloat\" -e nmtui",
     },
     "custom/powermenu": {
         "format": "■",
