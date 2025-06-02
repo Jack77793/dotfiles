@@ -1,7 +1,7 @@
 {
     "modules-left": [
         "custom/launcher",
-        "sway/workspaces",
+        "niri/workspaces",
         "mpd",
         "custom/cava-internal"
     ],
@@ -30,7 +30,7 @@
         "tooltip": false,
         "on-click-right": "alacritty --class=\"termfloat\" -e cava"
     },
-    "sway/workspaces": {
+    "niri/workspaces": {
         "disable-scroll": true
     },
     "idle_inhibitor": {
