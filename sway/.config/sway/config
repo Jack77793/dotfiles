@@ -15,7 +15,6 @@ bindsym $mod+f fullscreen
 bindsym $mod+w exec $HOME/bin/powermenu
 bindsym $mod+p exec $HOME/bin/powerprofiles
 bindsym $mod+m exec cliphist list | wofi --dmenu --pre-display-cmd "echo -n '%s' | cut -z -f 2" | cliphist decode | wl-copy
-bindsym Ctrl+Space exec fcitx5-remote -t && notify-send "Input methot switched"
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -99,6 +98,7 @@ input type:touchpad {
 #output * bg /home/Jack77793/.config/wallpaper/$(ls /home/Jack77793/.config/wallpaper | shuf -n 1) fill
 output * {
     adaptive_sync on
+    scale 2
     bg /home/Jack77793/Pictures/wallpaper/rei.png fill
 }
 
@@ -123,6 +123,7 @@ exec fcitx5 -d --replace
 exec mako
 exec wl-paste --watch cliphist store
 exec kdeconnectd
+exec kdeconnect-indicator
 exec thunar --daemon
 exec $HOME/bin/autotiling
 exec swayidle -w timeout 720 "systemctl suspend" before-sleep "swaylock -i /home/Jack77793/Pictures/wallpaper/rei.png -f"
@@ -156,7 +157,9 @@ for_window [class = "scrcpy"] floating enable
 for_window [class = "org.jackhuang.hmcl.Launcher"] border none
 for_window [app_id = "thunar" title="Rename*"] floating enable
 for_window [app_id = "org.telegram.desktop" title="Media viewer"] floating enable, resize set width 1280px height 800px, border pixel 3
-for_window [class = "QQ" title="图片查看器"] floating enable, resize set width 1280px height 800px, border pixel 3
-for_window [class = "QQ" title="视频播放器"] floating enable, resize set width 1280px height 800px, border pixel 3
+for_window [app_id = "QQ" title="图片查看器"] floating enable, resize set width 1280px height 800px, border pixel 3
+for_window [app_id = "QQ" title="视频播放器"] floating enable, resize set width 1280px height 800px, border pixel 3
+
+for_window [app_id = "com.moonlight_stream.Moonlight" title = ".* - Moonlight"] fullscreen enable
 
 include /etc/sway/config.d/*
