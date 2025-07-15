@@ -75,7 +75,6 @@ alias ls="eza"
 alias ll="eza -lb"
 alias la="eza -lab"
 alias tree="eza -Ta"
-alias cat="bat"
 
 try_until_success () {
   local i=1
