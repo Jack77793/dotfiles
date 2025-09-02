@@ -86,3 +86,14 @@ try_until_success () {
   done
 }
 compdef try_until_success=command
+
+run_continuously () {
+  local i=1
+  while true; do
+    echo "Run $i at $(date)."
+    $*
+    (( i+=1 ))
+    echo
+  done
+}
+compdef run_continuously=command
